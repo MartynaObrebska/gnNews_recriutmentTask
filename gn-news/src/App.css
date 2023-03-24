@@ -1,0 +1,30 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 60px;
+  width: 100vw;
+}
+
+.side-menu {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  height: calc(100vh - 60px);
+  width: 200px;
+}
+
+.content {
+  position: absolute;
+  top: 60px;
+  left: 200px;
+  width: calc(100vw - 200px);
+}
+
+.main-content {
+  min-height: calc(100vh - 60px - 60px);
+}
+
+.footer {
+  height: 60px;
+}
