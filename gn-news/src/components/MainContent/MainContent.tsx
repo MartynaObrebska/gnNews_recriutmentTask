@@ -1,7 +1,10 @@
-import React from "react";
+import ImageList from "@mui/material/ImageList";
+import ImageListItem from "@mui/material/ImageListItem";
 
-function MainContent() {
-  return <div className="main-content"></div>;
+export default function MainContent() {
+  return (
+    <ImageList sx={{ height: "calc(100vh - 84px - 84px)", margin: 0 }} cols={3}>
+      <ImageListItem />
+    </ImageList>
+  );
 }
-
-export default MainContent;
