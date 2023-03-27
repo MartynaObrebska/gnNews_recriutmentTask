@@ -22,12 +22,12 @@ interface Props {
 export default function ArticleGridItem(props: Props) {
   const { item } = props;
   return (
-    <ImageListItem sx={{ margin: "20px", height: "370px" }}>
-      <Card sx={{ height: "370px" }}>
+    <ImageListItem sx={{ margin: "10px" }}>
+      <Card sx={{ height: "360px" }}>
         <CardActionArea>
           <CardMedia
             component="img"
-            height="200"
+            height="190"
             image={item.img}
             alt={item.title}
           />
