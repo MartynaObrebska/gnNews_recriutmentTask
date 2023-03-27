@@ -11,10 +11,33 @@ const theme = createTheme({
   palette: {
     primary: {
       main: "#a3cf34",
+      contrastText: "#fff",
     },
     secondary: {
-      main: "#545454",
+      main: "#3a424d",
+      contrastText: "#fff",
     },
+    background: {
+      paper: "#fff",
+    },
+    text: {
+      primary: "#545454",
+    },
+  },
+  typography: {
+    fontFamily: [
+      '"Nunito"',
+      "-apple-system",
+      "BlinkMacSystemFont",
+      '"Roboto"',
+      '"Oxygen"',
+      '"Ubuntu"',
+      '"Cantarell"',
+      '"Fira Sans"',
+      '"Droid Sans"',
+      '"Helvetica Neue"',
+      "sans-serif",
+    ].join(","),
   },
 });
 
@@ -25,10 +48,10 @@ function App() {
         <Grid item xs={12} sx={{ height: "84px" }}>
           <Header />
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={2} color="primary">
           <SideMenu />
         </Grid>
-        <Grid item xs={9}>
+        <Grid item xs={10}>
           <MainContent />
         </Grid>
         <Grid item xs={12} sx={{ height: "84px" }}>
