@@ -3,15 +3,18 @@ import ViewListIcon from "@mui/icons-material/ViewList";
 import ViewModuleIcon from "@mui/icons-material/ViewModule";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
+import { useAppDispatch, useAppSelector } from "../../../app/hooks";
+import { setLayout } from "../../../app/Stores/reducers/layoutSlice";
 
 function ToggleViewButtons() {
-  const [view, setView] = React.useState("list");
+  const view = useAppSelector((state) => state.layout.layout);
+  const dispatch = useAppDispatch();
 
   const handleChange = (
-    event: React.MouseEvent<HTMLElement>,
-    nextView: string
+    e: React.MouseEvent<HTMLElement>,
+    nextView: "list" | "grid"
   ) => {
-    setView(nextView);
+    dispatch(setLayout(nextView));
   };
 
   return (
@@ -25,7 +28,7 @@ function ToggleViewButtons() {
       <ToggleButton value="list" aria-label="list">
         <ViewListIcon />
       </ToggleButton>
-      <ToggleButton value="module" aria-label="module">
+      <ToggleButton value="grid" aria-label="grid">
         <ViewModuleIcon />
       </ToggleButton>
     </ToggleButtonGroup>

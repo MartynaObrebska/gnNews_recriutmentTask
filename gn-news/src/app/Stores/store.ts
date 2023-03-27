@@ -1,7 +1,11 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 
+import layoutReducer from "./reducers/layoutSlice";
+
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    layout: layoutReducer,
+  },
 });
 
 export type AppDispatch = typeof store.dispatch;
