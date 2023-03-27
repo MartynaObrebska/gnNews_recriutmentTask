@@ -11,6 +11,7 @@ const theme = createTheme({
   palette: {
     primary: {
       main: "#a3cf34",
+      dark: "#cadc16",
       contrastText: "#fff",
     },
     secondary: {
@@ -48,7 +49,12 @@ function App() {
         <Grid item xs={12} sx={{ height: "84px" }}>
           <Header />
         </Grid>
-        <Grid item xs={2} color="primary">
+        <Grid
+          item
+          xs={2}
+          color="primary"
+          sx={{ borderRight: "1px solid #ddd" }}
+        >
           <SideMenu />
         </Grid>
         <Grid item xs={10}>
