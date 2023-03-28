@@ -1,29 +1,19 @@
-import { MenuList, MenuItem, ListItemText } from "@mui/material";
+import { MenuList } from "@mui/material";
+import { countries } from "../../utility/countries";
+import Country from "./Country/Country";
 
 function SideMenu() {
-  const countries = [
-    "Country placeholder",
-    "Country placeholder",
-    "Country placeholder",
-    "Country placeholder",
-    "Country placeholder",
-    "Country placeholder",
-    "Country placeholder",
-  ];
   return (
-    <MenuList>
+    <MenuList
+      sx={{
+        position: "relative",
+        overflow: "auto",
+        maxHeight: "calc(100vh - 84px - 84px)",
+        padding: 0,
+      }}
+    >
       {countries.map((item, index) => (
-        <MenuItem
-          key={index}
-          sx={{
-            bgcolor: "transparent",
-            "&:hover": {
-              backgroundColor: "primary.main",
-            },
-          }}
-        >
-          <ListItemText>{item}</ListItemText>
-        </MenuItem>
+        <Country key={index} item={item} />
       ))}
     </MenuList>
   );
