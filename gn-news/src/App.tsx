@@ -1,46 +1,10 @@
-import React from "react";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import MainContent from "./components/MainContent/MainContent";
 import SideMenu from "./components/SideMenu/SideMenu";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { Grid } from "@mui/material";
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#a3cf34",
-      dark: "#cadc16",
-      contrastText: "#fff",
-    },
-    secondary: {
-      main: "#3a424d",
-      contrastText: "#fff",
-    },
-    background: {
-      paper: "#fff",
-    },
-    text: {
-      primary: "#545454",
-    },
-  },
-  typography: {
-    fontFamily: [
-      '"Nunito"',
-      "-apple-system",
-      "BlinkMacSystemFont",
-      '"Roboto"',
-      '"Oxygen"',
-      '"Ubuntu"',
-      '"Cantarell"',
-      '"Fira Sans"',
-      '"Droid Sans"',
-      '"Helvetica Neue"',
-      "sans-serif",
-    ].join(","),
-  },
-});
+import { Grid, ThemeProvider } from "@mui/material";
+import theme from "./styles/theme";
 
 function App() {
   return (
