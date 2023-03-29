@@ -22,12 +22,24 @@ const countriesNames = [
     code: "br",
   },
   {
+    name: "Bulgaria",
+    code: "bg",
+  },
+  {
     name: "Canada",
     code: "ca",
   },
   {
     name: "China",
     code: "cn",
+  },
+  {
+    name: "Colombia",
+    code: "co",
+  },
+  {
+    name: "Cuba",
+    code: "cu",
   },
   {
     name: "Czech Republic",
@@ -50,6 +62,30 @@ const countriesNames = [
     code: "gr",
   },
   {
+    name: "Hong Kong",
+    code: "hk",
+  },
+  {
+    name: "Hungary",
+    code: "hu",
+  },
+  {
+    name: "India",
+    code: "in",
+  },
+  {
+    name: "Indonesia",
+    code: "id",
+  },
+  {
+    name: "Ireland",
+    code: "ie",
+  },
+  {
+    name: "Israel",
+    code: "il",
+  },
+  {
     name: "Italy",
     code: "it",
   },
@@ -58,8 +94,112 @@ const countriesNames = [
     code: "jp",
   },
   {
+    name: "Latvia",
+    code: "lv",
+  },
+  {
+    name: "Lithuania",
+    code: "lt",
+  },
+  {
+    name: "Malaysia",
+    code: "my",
+  },
+  {
+    name: "Mexico",
+    code: "mx",
+  },
+  {
+    name: "Morocco",
+    code: "ma",
+  },
+  {
+    name: "Netherlands",
+    code: "nl",
+  },
+  {
+    name: "New Zealand",
+    code: "nz",
+  },
+  {
+    name: "Nigeria",
+    code: "ng",
+  },
+  {
+    name: "Norway",
+    code: "no",
+  },
+  {
+    name: "Philippines",
+    code: "ph",
+  },
+  {
     name: "Poland",
     code: "pl",
+  },
+  {
+    name: "Portugal",
+    code: "pt",
+  },
+  {
+    name: "Romania",
+    code: "ro",
+  },
+  {
+    name: "Russia",
+    code: "ru",
+  },
+  {
+    name: "Saudi Arabia",
+    code: "sa",
+  },
+  {
+    name: "Serbia",
+    code: "rs",
+  },
+  {
+    name: "Singapore",
+    code: "sg",
+  },
+  {
+    name: "Slovakia",
+    code: "sk",
+  },
+  {
+    name: "Slovenia",
+    code: "si",
+  },
+  {
+    name: "South Africa",
+    code: "za",
+  },
+  {
+    name: "South Korea",
+    code: "kr",
+  },
+  {
+    name: "Sweden",
+    code: "se",
+  },
+  {
+    name: "Switzerland",
+    code: "ch",
+  },
+  {
+    name: "Taiwan",
+    code: "tw",
+  },
+  {
+    name: "Thailand",
+    code: "th",
+  },
+  {
+    name: "Turkey",
+    code: "tr",
+  },
+  {
+    name: "UAE",
+    code: "ae",
   },
   {
     name: "Ukraine",
@@ -72,6 +212,10 @@ const countriesNames = [
   {
     name: "United States",
     code: "us",
+  },
+  {
+    name: "Venuzuela",
+    code: "ve",
   },
 ];
 

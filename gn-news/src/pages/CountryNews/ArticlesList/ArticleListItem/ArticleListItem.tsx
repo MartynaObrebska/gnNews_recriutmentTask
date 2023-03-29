@@ -2,13 +2,18 @@ import { Card, CardContent, Typography, Stack, ListItem } from "@mui/material";
 
 interface Props {
   item: {
-    title: string;
-    img: string;
+    source: {
+      id: number;
+      name: string;
+    };
     author: string;
-    source: string;
+    title: string;
+    description: string;
+    url: string;
+    urlToImage: string;
     publishedAt: string;
     content: string;
-  };
+  } | null;
 }
 
 export default function ArticleListItem(props: Props) {
@@ -19,14 +24,14 @@ export default function ArticleListItem(props: Props) {
         <CardContent>
           <Stack direction="row">
             <Typography gutterBottom variant="h5" component="div">
-              {item.title}
+              {item?.title}
             </Typography>
             <Typography variant="caption" color="primary.main">
-              {item.publishedAt}
+              {item?.publishedAt}
             </Typography>
           </Stack>
           <Typography variant="caption" color="primary.main">
-            {item.author}
+            {item?.author}
           </Typography>
         </CardContent>
       </Card>
