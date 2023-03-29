@@ -1,10 +1,14 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 
-import layoutReducer from "./reducers/layoutSlice";
+import layoutReducer from "./reducers/Layout/layoutSlice";
+import countryReducer from "./reducers/Country/countrySlice";
+import newsReducer from "./reducers/News/newsSlice";
 
 export const store = configureStore({
   reducer: {
     layout: layoutReducer,
+    country: countryReducer,
+    news: newsReducer,
   },
 });
 
