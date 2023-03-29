@@ -17,7 +17,14 @@ interface Props {
 function Country(props: Props) {
   const { item } = props;
   return (
-    <Box component="a" href={`/country/${item.code}`}>
+    <Box
+      component="a"
+      href={`/country/${item.code}`}
+      color="text.primary"
+      sx={{
+        textDecoration: "none",
+      }}
+    >
       <MenuItem
         sx={{
           height: 50,

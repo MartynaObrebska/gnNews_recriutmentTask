@@ -4,7 +4,7 @@ import ArticlesList from "./ArticlesList/ArticlesList";
 import { useParams } from "react-router-dom";
 import { setNews } from "../../app/Stores/reducers/News/newsSlice";
 import { useEffect } from "react";
-import { Box } from "@mui/material";
+import { Grid } from "@mui/material";
 
 export default function CountryNews() {
   const view = useAppSelector((state) => state.layout.layout);
@@ -30,5 +30,9 @@ export default function CountryNews() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [url]);
   console.log("countrynews");
-  return <Box>{view === "list" ? <ArticlesList /> : <ArticlesGrid />}</Box>;
+  return (
+    <Grid item xs={10} sx={{ maxHeight: "calc(100vh - 84px - 84px)" }}>
+      {view === "list" ? <ArticlesList /> : <ArticlesGrid />}
+    </Grid>
+  );
 }

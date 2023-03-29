@@ -7,6 +7,8 @@ export default function ArticlesList() {
   return (
     <List
       sx={{
+        position: "relative",
+        overflow: "auto",
         height: "calc(100vh - 84px - 84px)",
         margin: 0,
         padding: 0,

@@ -19,19 +19,23 @@ interface Props {
 export default function ArticleListItem(props: Props) {
   const { item } = props;
   return (
-    <ListItem>
-      <Card sx={{ minHeight: "90px", flexGrow: 1 }}>
+    <ListItem sx={{ cursor: "pointer" }}>
+      <Card sx={{ minHeight: "40px", flexGrow: 1 }}>
         <CardContent>
-          <Stack direction="row">
-            <Typography gutterBottom variant="h5" component="div">
-              {item?.title}
+          <Stack direction="row" justifyContent="space-between">
+            <Typography variant="caption" color="primary.main">
+              {item?.source.name}
             </Typography>
             <Typography variant="caption" color="primary.main">
               {item?.publishedAt}
             </Typography>
           </Stack>
-          <Typography variant="caption" color="primary.main">
-            {item?.author}
+          <Typography
+            variant="body1"
+            component="div"
+            sx={{ fontWeight: "800" }}
+          >
+            {item?.title}
           </Typography>
         </CardContent>
       </Card>
