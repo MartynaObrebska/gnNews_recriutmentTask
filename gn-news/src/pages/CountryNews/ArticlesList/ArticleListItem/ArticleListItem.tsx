@@ -1,25 +1,16 @@
 import { Card, CardContent, Typography, Stack, ListItem } from "@mui/material";
+import { ModalItem } from "../../NewsModal/NewsModal";
 
 interface Props {
-  item: {
-    source: {
-      id: number;
-      name: string;
-    };
-    author: string;
-    title: string;
-    description: string;
-    url: string;
-    urlToImage: string;
-    publishedAt: string;
-    content: string;
-  } | null;
+  item: ModalItem;
+  handleOpen: (item: ModalItem) => void;
 }
 
 export default function ArticleListItem(props: Props) {
-  const { item } = props;
+  const { item, handleOpen } = props;
+
   return (
-    <ListItem sx={{ cursor: "pointer" }}>
+    <ListItem sx={{ cursor: "pointer" }} onClick={() => handleOpen(item)}>
       <Card sx={{ minHeight: "40px", flexGrow: 1 }}>
         <CardContent>
           <Stack direction="row" justifyContent="space-between">

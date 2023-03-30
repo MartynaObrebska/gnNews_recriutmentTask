@@ -29,7 +29,6 @@ export default function CountryNews() {
     fetchArticles(url);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [url]);
-  console.log("countrynews");
   return (
     <Grid item xs={10} sx={{ maxHeight: "calc(100vh - 84px - 84px)" }}>
       {view === "list" ? <ArticlesList /> : <ArticlesGrid />}

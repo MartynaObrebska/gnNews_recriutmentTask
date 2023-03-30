@@ -47,6 +47,22 @@ export const newsSlice = createSlice({
     ) => {
       state.news = action.payload;
     },
+    selectNews: (
+      state,
+      action: PayloadAction<{
+        source: {
+          id: number;
+          name: string;
+        };
+        author: string;
+        title: string;
+        description: string;
+        url: string;
+        urlToImage: string;
+        publishedAt: string;
+        content: string;
+      } | null>
+    ) => {},
   },
 });
 
