@@ -1,8 +1,18 @@
 import ToggleViewButtons from "./ToggleViewButtons/ToggleViewButtons";
 import logo from "../../assets/gnNews.png";
 import { AppBar, Box, Button, Grid, Stack, Toolbar } from "@mui/material";
+import { useState } from "react";
+import PopUp from "./PopUp/PopUp";
 
 function Header() {
+  const [open, setOpen] = useState<boolean>(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <Grid item xs={12} sx={{ height: "84px" }}>
       <Box sx={{ flexGrow: 1 }}>
@@ -22,6 +32,7 @@ function Header() {
               <Button
                 variant="contained"
                 sx={{ fontWeight: "800", paddingTop: "9px" }}
+                onClick={handleOpen}
               >
                 Click!
               </Button>
@@ -29,6 +40,7 @@ function Header() {
           </Toolbar>
         </AppBar>
       </Box>
+      <PopUp open={open} handleClose={handleClose}/>
     </Grid>
   );
 }
