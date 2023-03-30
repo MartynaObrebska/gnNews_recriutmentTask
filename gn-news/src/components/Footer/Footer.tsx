@@ -1,6 +1,9 @@
 import { Grid, Typography } from "@mui/material";
+import { useAppSelector } from "../../app/hooks";
+import { CurrentDate } from "./CurrentDate/CurrentDate";
 
 function Footer() {
+  const articlesData = useAppSelector((state) => state.news.news);
   return (
     <Grid item xs={12} sx={{ height: "84px" }}>
       <Grid
@@ -9,13 +12,16 @@ function Footer() {
       >
         <Grid item xs={2}>
           <Typography align="center" sx={{ lineHeight: "84px" }}>
-            Time placeholder
+            <CurrentDate />
           </Typography>
         </Grid>
         <Grid item xs={10}>
           <Typography align="center" sx={{ lineHeight: "84px" }}>
-            Total articles:
-          </Typography>{" "}
+            Total articles:{" "}
+            <span style={{ fontWeight: "800", paddingLeft: "5px" }}>
+              {articlesData?.length}
+            </span>
+          </Typography>
         </Grid>
       </Grid>
     </Grid>
