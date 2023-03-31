@@ -12,8 +12,11 @@ import {
 import { useState } from "react";
 import PopUp from "./PopUp/PopUp";
 import LongMenu from "./LongMenu/LongMenu";
+import ToggleLanguageButton from "../ToggleLanguageButton/ToggleLanguageButton";
+import { useTranslation } from "react-i18next";
 
 function Header() {
+  const { t } = useTranslation();
   const [openPopUp, setOpenPopUp] = useState<boolean>(false);
   const handleOpenPopUp = () => {
     setOpenPopUp(true);
@@ -64,8 +67,9 @@ function Header() {
                 }}
                 onClick={handleOpenPopUp}
               >
-                About
+                {t("menuButton")}
               </Button>
+              <ToggleLanguageButton />
               <LongMenu handleOpenPopUp={handleOpenPopUp} />
             </Stack>
           </Toolbar>

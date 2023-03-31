@@ -24,6 +24,7 @@ function ToggleViewButtons() {
       onChange={handleChange}
       size={"small"}
       color={"primary"}
+      sx={{ display: { xs: "none", md: "inline" } }}
     >
       <ToggleButton value="list" aria-label="list">
         <ViewListIcon />

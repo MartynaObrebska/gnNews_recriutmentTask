@@ -1,7 +1,9 @@
 import { CardMedia, CardContent, Typography, Grid } from "@mui/material";
 import logo from "../../assets/gnNews_big.png";
+import { useTranslation } from "react-i18next";
 
 export default function Home() {
+  const { t } = useTranslation();
   return (
     <Grid
       item
@@ -31,10 +33,10 @@ export default function Home() {
           />
           <CardContent>
             <Typography align="center" variant="h4" sx={{ fontWeight: "800" }}>
-              Find latest news from around the world!
+              {t("homePageTitle")}
             </Typography>
             <Typography align="center" variant="h6">
-              Select country to see all its news.
+              {t("homePageDescription")}
             </Typography>
           </CardContent>
         </Grid>

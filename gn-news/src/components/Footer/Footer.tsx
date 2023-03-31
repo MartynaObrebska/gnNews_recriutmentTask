@@ -1,8 +1,10 @@
 import { Grid, Typography } from "@mui/material";
 import { useAppSelector } from "../../app/hooks";
 import { CurrentDate } from "./CurrentDate/CurrentDate";
+import { useTranslation } from "react-i18next";
 
 function Footer() {
+  const { t } = useTranslation();
   const articlesData = useAppSelector((state) => state.news.news);
   return (
     <Grid item xs={12}>
@@ -36,7 +38,7 @@ function Footer() {
               align="center"
               sx={{ lineHeight: { xs: "42px", sm: "84px" } }}
             >
-              Total articles:{" "}
+              {t("totalArticles")}
               <span style={{ fontWeight: "800", paddingLeft: "5px" }}>
                 {articlesData?.length}
               </span>
