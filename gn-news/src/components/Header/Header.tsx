@@ -5,7 +5,6 @@ import {
   Box,
   Button,
   Grid,
-  IconButton,
   Stack,
   Toolbar,
   Typography,
@@ -15,12 +14,12 @@ import PopUp from "./PopUp/PopUp";
 import LongMenu from "./LongMenu/LongMenu";
 
 function Header() {
-  const [open, setOpen] = useState<boolean>(false);
-  const handleOpen = () => {
-    setOpen(true);
+  const [openPopUp, setOpenPopUp] = useState<boolean>(false);
+  const handleOpenPopUp = () => {
+    setOpenPopUp(true);
   };
-  const handleClose = () => {
-    setOpen(false);
+  const handleClosePopUp = () => {
+    setOpenPopUp(false);
   };
 
   return (
@@ -31,7 +30,7 @@ function Header() {
           color="secondary"
           justify-content="space-between"
         >
-          <Toolbar sx={{ padding: 0 }}>
+          <Toolbar sx={{ padding: 0, height: "84px" }}>
             <Box
               component="a"
               href="/"
@@ -40,12 +39,16 @@ function Header() {
               <img src={logo} alt="gnNews" loading="lazy" />
             </Box>
             <Typography
-              variant="h5"
+              color="secondary.contrastText"
+              component="a"
+              href="/"
+              variant="h6"
               sx={{
                 flexGrow: 1,
                 fontWeight: "800",
                 padding: "0 20px",
                 display: { xs: "inline", sm: "none" },
+                textDecoration: "none",
               }}
             >
               gnNews
@@ -59,18 +62,16 @@ function Header() {
                   paddingTop: "9px",
                   display: { xs: "none", lg: "inline-flex" },
                 }}
-                onClick={handleOpen}
+                onClick={handleOpenPopUp}
               >
                 About
               </Button>
-              <IconButton sx={{ display: { xs: "inline-flex", lg: "none" } }}>
-                <LongMenu />
-              </IconButton>
+              <LongMenu handleOpenPopUp={handleOpenPopUp} />
             </Stack>
           </Toolbar>
         </AppBar>
       </Box>
-      <PopUp open={open} handleClose={handleClose} />
+      <PopUp open={openPopUp} handleClose={handleClosePopUp} />
     </Grid>
   );
 }

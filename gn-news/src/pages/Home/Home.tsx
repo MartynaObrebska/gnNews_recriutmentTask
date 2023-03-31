@@ -15,6 +15,7 @@ export default function Home() {
         justifyContent="center"
         alignItems="center"
         height="calc(100vh - 84px - 84px)"
+        overflow="auto"
       >
         <Grid
           sx={{

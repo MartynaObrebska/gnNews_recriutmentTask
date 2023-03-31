@@ -1,4 +1,6 @@
-import { Modal, Box, Typography, Stack } from "@mui/material";
+import { Modal, Box, Typography, Stack, IconButton } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
+
 export interface ModalItem {
   source: {
     id: number;
@@ -16,28 +18,41 @@ export interface ModalItem {
 interface Props {
   open: boolean;
   item?: ModalItem;
-  handleClose: (event: {}, reason: "backdropClick" | "escapeKeyDown") => void;
+  handleClose: () => void;
 }
 
 export default function NewsModal(props: Props) {
   const { open, item, handleClose } = props;
   const style = {
     position: "absolute" as "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: "50%",
+    top: { xs: 0, sm: "50%" },
+    left: { xs: 0, sm: "50%" },
+    transform: { xs: "none", sm: "translate(-50%, -50%)" },
+    width: { xs: "100%", sm: "70%" },
     bgcolor: "background.paper",
-    border: "1px solid #aaa",
+    border: { xs: "none", sm: "1px solid #aaa" },
     boxShadow: 12,
-    p: 4,
-    borderRadius: 2,
+    p: { xs: 2, sm: 4 },
+    borderRadius: { xs: 0, sm: 2 },
+    boxSizing: "border-box",
+    overflow: "auto",
+    maxHeight: { xs: "100vh", sm: "auto" },
   };
 
   return (
     <Modal open={open} onClose={handleClose}>
-      <Box sx={style}>
-        <Stack direction="row" justifyContent="space-between">
+      <Stack sx={style}>
+        <IconButton
+          onClick={handleClose}
+          sx={{ p: 0, justifyContent: "right" }}
+        >
+          <CloseIcon fontSize="large" />
+        </IconButton>
+        <Stack
+          direction="row"
+          justifyContent="space-between"
+          sx={{ marginTop: 2 }}
+        >
           <Typography variant="caption" color="primary.main">
             {item?.source.name}
           </Typography>
@@ -81,7 +96,7 @@ export default function NewsModal(props: Props) {
             {item?.url.substring(0, 100)}(...)
           </Typography>
         </Box>
-      </Box>
+      </Stack>
     </Modal>
   );
 }

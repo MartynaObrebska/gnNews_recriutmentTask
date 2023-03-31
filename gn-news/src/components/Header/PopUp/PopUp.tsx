@@ -1,33 +1,43 @@
-import { Modal, Box, Typography } from "@mui/material";
+import { Modal, Typography, IconButton, Stack } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 
 interface Props {
   open: boolean;
-  handleClose: (event: {}, reason: "backdropClick" | "escapeKeyDown") => void;
+  handleClose: () => void;
 }
 
 export default function PopUp(props: Props) {
   const { open, handleClose } = props;
   const style = {
     position: "absolute" as "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: "50%",
+    top: { xs: 0, sm: "50%" },
+    left: { xs: 0, sm: "50%" },
+    transform: { xs: "none", sm: "translate(-50%, -50%)" },
+    width: { xs: "100%", sm: "70%" },
     bgcolor: "background.paper",
-    border: "1px solid #aaa",
+    border: { xs: "none", sm: "1px solid #aaa" },
     boxShadow: 12,
-    p: 4,
-    borderRadius: 2,
+    p: { xs: 2, sm: 4 },
+    borderRadius: { xs: 0, sm: 2 },
+    boxSizing: "border-box",
+    overflow: "auto",
+    maxHeight: { xs: "100vh", sm: "auto" },
   };
   return (
     <Modal open={open} onClose={handleClose}>
-      <Box sx={style}>
+      <Stack sx={style}>
+        <IconButton
+          onClick={handleClose}
+          sx={{ p: 0, justifyContent: "right" }}
+        >
+          <CloseIcon fontSize="large" />
+        </IconButton>
         <Typography
           align="center"
           id="modal-modal-title"
           variant="h6"
           component="h2"
-          sx={{ marginBottom: 2 }}
+          sx={{ margin: 2 }}
         >
           Największe trudności i przyjemności
         </Typography>
@@ -48,7 +58,7 @@ export default function PopUp(props: Props) {
           aplikacji w oparciu o design strony gnStudio. Ogólnie praca nad
           projektem była bardzo satysfakcjonująca i rozwijająca.
         </Typography>
-      </Box>
+      </Stack>
     </Modal>
   );
 }
