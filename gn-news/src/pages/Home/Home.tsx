@@ -29,10 +29,10 @@ export default function Home() {
             sx={{ backgroundSize: "contain", objectFit: "contain" }}
           />
           <CardContent>
-            <Typography variant="h4" sx={{ fontWeight: "800" }}>
+            <Typography align="center" variant="h4" sx={{ fontWeight: "800" }}>
               Find latest news from around the world!
             </Typography>
-            <Typography variant="h6">
+            <Typography align="center" variant="h6">
               Select country to see all its news.
             </Typography>
           </CardContent>

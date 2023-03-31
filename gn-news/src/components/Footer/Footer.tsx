@@ -5,24 +5,44 @@ import { CurrentDate } from "./CurrentDate/CurrentDate";
 function Footer() {
   const articlesData = useAppSelector((state) => state.news.news);
   return (
-    <Grid item xs={12} sx={{ height: "84px" }}>
+    <Grid item xs={12}>
       <Grid
         container
-        sx={{ height: "84px", color: "white", backgroundColor: "#3a424d" }}
+        direction={{ xs: "column", sm: "row" }}
+        sx={{
+          height: "84px",
+          color: "secondary.contrastText",
+          bgcolor: "secondary.main",
+        }}
       >
-        <Grid item xs={2}>
-          <Typography align="center" sx={{ lineHeight: "84px" }}>
+        <Grid
+          item
+          xs={articlesData ? 6 : 12}
+          lg={articlesData ? 2 : 12}
+          justifyContent="center"
+        >
+          <Typography
+            align="center"
+            sx={{
+              lineHeight: { xs: articlesData ? "42px" : "84px", sm: "84px" },
+            }}
+          >
             <CurrentDate />
           </Typography>
         </Grid>
-        <Grid item xs={10}>
-          <Typography align="center" sx={{ lineHeight: "84px" }}>
-            Total articles:{" "}
-            <span style={{ fontWeight: "800", paddingLeft: "5px" }}>
-              {articlesData?.length}
-            </span>
-          </Typography>
-        </Grid>
+        {articlesData && (
+          <Grid item xs={6} lg={10}>
+            <Typography
+              align="center"
+              sx={{ lineHeight: { xs: "42px", sm: "84px" } }}
+            >
+              Total articles:{" "}
+              <span style={{ fontWeight: "800", paddingLeft: "5px" }}>
+                {articlesData?.length}
+              </span>
+            </Typography>
+          </Grid>
+        )}
       </Grid>
     </Grid>
   );

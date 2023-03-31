@@ -1,4 +1,4 @@
-import { Box, ImageList } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import { useState } from "react";
 import { useAppSelector } from "../../../app/hooks";
 import NewsModal, { ModalItem } from "../NewsModal/NewsModal";
@@ -18,12 +18,13 @@ export default function ArticlesGrid() {
   };
 
   return (
-    <ImageList
+    <Grid
+      container
       sx={{
         height: "calc(100vh - 84px - 84px)",
-        margin: 0,
+        overflow: "auto",
       }}
-      cols={3}
+      columns={{ xs: 1, sm: 3, md: 4, lg: 6 }}
     >
       {articlesData ? (
         articlesData?.map((item, index) => (
@@ -33,6 +34,6 @@ export default function ArticlesGrid() {
         <Box />
       )}
       <NewsModal item={modalItem} open={open} handleClose={handleClose} />
-    </ImageList>
+    </Grid>
   );
 }

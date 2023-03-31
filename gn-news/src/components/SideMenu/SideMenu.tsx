@@ -4,7 +4,15 @@ import Country from "./Country/Country";
 
 function SideMenu() {
   return (
-    <Grid item xs={2} color="primary" sx={{ borderRight: "1px solid #ddd" }}>
+    <Grid
+      item
+      lg={2}
+      color="primary"
+      sx={{
+        borderRight: "1px solid #ddd",
+        display: { xs: "none", lg: "block" },
+      }}
+    >
       <MenuList
         sx={{
           position: "relative",

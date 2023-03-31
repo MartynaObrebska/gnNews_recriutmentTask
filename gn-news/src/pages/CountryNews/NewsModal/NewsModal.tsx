@@ -72,7 +72,14 @@ export default function NewsModal(props: Props) {
             },
           }}
         >
-          <Typography variant="caption">{item?.url}</Typography>
+          <Typography
+            sx={{
+              overflowWrap: "break-word",
+            }}
+            variant="caption"
+          >
+            {item?.url.substring(0, 100)}(...)
+          </Typography>
         </Box>
       </Box>
     </Modal>
