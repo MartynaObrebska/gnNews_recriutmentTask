@@ -10,7 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useState } from "react";
-import PopUp from "./PopUp/PopUp";
+import PopUp from "../PopUp/PopUp";
 import LongMenu from "./LongMenu/LongMenu";
 import ToggleLanguageButton from "../ToggleLanguageButton/ToggleLanguageButton";
 import { useTranslation } from "react-i18next";

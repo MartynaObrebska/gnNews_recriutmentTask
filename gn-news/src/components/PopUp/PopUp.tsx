@@ -1,5 +1,6 @@
 import { Modal, Typography, IconButton, Stack } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
+import { useTranslation } from "react-i18next";
 
 interface Props {
   open: boolean;
@@ -7,6 +8,7 @@ interface Props {
 }
 
 export default function PopUp(props: Props) {
+  const { t } = useTranslation();
   const { open, handleClose } = props;
   const style = {
     position: "absolute" as "absolute",
@@ -23,6 +25,8 @@ export default function PopUp(props: Props) {
     overflow: "auto",
     maxHeight: { xs: "100vh", sm: "auto" },
   };
+
+  const descriptionParts = ["1", "2", "3", "4"];
   return (
     <Modal open={open} onClose={handleClose}>
       <Stack sx={style}>
@@ -39,25 +43,19 @@ export default function PopUp(props: Props) {
           component="h2"
           sx={{ margin: 2 }}
         >
-          Największe trudności i przyjemności
+          {t("popUpTitle")}
         </Typography>
-        <Typography
-          align="justify"
-          id="modal-modal-title"
-          variant="body1"
-          component="h2"
-        >
-          Największą trudność sprawiła mi praca z biblioteką UI i Reduxem,
-          ponieważ nie miałam wcześniej zbyt dużego doświadczenia z tymi
-          narzędziami. Staram sie jednak traktować to bardziej jako wyzwania nie
-          problem, ponieważ dzięki temu bardziej się rozwijam i uczę nowych
-          rzeczy. Daje mi to zdecydowanie wiekszą satysfakcję, gdy uda mi się
-          pokonać jakąś trudność. Dlatego właśnie te same aspekty były dla mnie
-          również największą przyjemnością. Ciekawa była również współpraca z
-          News API. Duuuużo frajdy sprawiło mi także projektowanie designu całej
-          aplikacji w oparciu o design strony gnStudio. Ogólnie praca nad
-          projektem była bardzo satysfakcjonująca i rozwijająca.
-        </Typography>
+        {descriptionParts.map((number) => (
+          <Typography
+            key={number}
+            align="justify"
+            id={`modal-modal-desc${number}`}
+            variant="body1"
+            sx={{ m: 1 }}
+          >
+            {t(`popUpDescriptionPart${number}`)}
+          </Typography>
+        ))}
       </Stack>
     </Modal>
   );
