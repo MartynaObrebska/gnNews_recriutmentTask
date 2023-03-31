@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import PopUp from "./PopUp/PopUp";
-import MenuIcon from "@mui/icons-material/Menu";
+import LongMenu from "./LongMenu/LongMenu";
 
 function Header() {
   const [open, setOpen] = useState<boolean>(false);
@@ -64,7 +64,7 @@ function Header() {
                 About
               </Button>
               <IconButton sx={{ display: { xs: "inline-flex", lg: "none" } }}>
-                <MenuIcon fontSize="large" color={"primary"} />
+                <LongMenu />
               </IconButton>
             </Stack>
           </Toolbar>
