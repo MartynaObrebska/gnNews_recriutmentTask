@@ -17,7 +17,7 @@ export default function ArticleListItem(props: Props) {
             <Typography variant="caption" color="primary.main">
               {item?.source.name}
             </Typography>
-            <Typography variant="caption" color="primary.main">
+            <Typography variant="caption" color="primary.main" align="right">
               {item?.publishedAt}
             </Typography>
           </Stack>
