@@ -34,12 +34,10 @@ function Header() {
           justify-content="space-between"
         >
           <Toolbar sx={{ padding: 0, height: "84px" }}>
-            <Box
-              component="a"
-              href="/"
-              sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-            >
-              <img src={logo} alt="gnNews" loading="lazy" />
+            <Box sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}>
+              <Box component="a" href="/">
+                <img src={logo} alt="gnNews" loading="lazy" />
+              </Box>
             </Box>
             <Typography
               color="secondary.contrastText"
