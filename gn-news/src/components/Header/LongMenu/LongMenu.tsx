@@ -8,17 +8,18 @@ import Country from "../../SideMenu/Country/Country";
 import {
   Accordion,
   AccordionSummary,
-  Typography,
   AccordionDetails,
   MenuList,
   Button,
 } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 interface Props {
   handleOpenPopUp: () => void;
 }
 
 export default function LongMenu(props: Props) {
+  const { t } = useTranslation();
   const [expanded, setExpanded] = React.useState<boolean>(false);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -62,8 +63,12 @@ export default function LongMenu(props: Props) {
         }}
       >
         <MenuItem>
-          <Button variant="text" onClick={props.handleOpenPopUp}>
-            About
+          <Button
+            variant="text"
+            sx={{ justifyContent: "start" }}
+            onClick={props.handleOpenPopUp}
+          >
+            {t("menuButton")}
           </Button>
         </MenuItem>
         <MenuItem>
@@ -77,7 +82,9 @@ export default function LongMenu(props: Props) {
               id="panel-header"
               sx={{ p: 0 }}
             >
-              <Typography>Countries</Typography>
+              <Button variant="text" sx={{ justifyContent: "start" }}>
+                {t("countries")}{" "}
+              </Button>
             </AccordionSummary>
             <AccordionDetails sx={{ p: 0 }}>
               <MenuList>

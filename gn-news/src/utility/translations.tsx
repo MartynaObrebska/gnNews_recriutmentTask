@@ -11,6 +11,7 @@ i18n
       en: {
         translations: {
           key: "en",
+          countries: "Countries",
           homePageTitle: "Find latest news from around the world!",
           homePageDescription: "Select country to see all its news. ",
           totalArticles: "Total articles: ",
@@ -29,6 +30,7 @@ i18n
       pl: {
         translations: {
           key: "pl",
+          countries: "Kraje",
           homePageTitle: "Sprawdź najnowsze wiadomości z całego świata!",
           homePageDescription:
             "Wybierz kraj, aby zobaczyć wszystkie wiadomości. ",

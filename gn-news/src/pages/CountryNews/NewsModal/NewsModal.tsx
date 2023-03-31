@@ -28,7 +28,7 @@ export default function NewsModal(props: Props) {
     top: { xs: 0, sm: "50%" },
     left: { xs: 0, sm: "50%" },
     transform: { xs: "none", sm: "translate(-50%, -50%)" },
-    width: { xs: "100%", sm: "70%" },
+    width: { xs: "100%", sm: "70%", lg: "40%" },
     bgcolor: "background.paper",
     border: { xs: "none", sm: "1px solid #aaa" },
     boxShadow: 12,
@@ -37,6 +37,7 @@ export default function NewsModal(props: Props) {
     boxSizing: "border-box",
     overflow: "auto",
     maxHeight: { xs: "100vh", sm: "auto" },
+    minHeight: { xs: "100vh", sm: "auto" },
   };
 
   return (
