@@ -60,7 +60,7 @@ function Header() {
                 sx={{
                   fontWeight: "800",
                   paddingTop: "9px",
-                  display: { xs: "none", lg: "inline-flex" },
+                  display: { xs: "none", md: "inline-flex" },
                 }}
                 onClick={handleOpenPopUp}
               >

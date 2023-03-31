@@ -30,7 +30,13 @@ export default function CountryNews() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [url]);
   return (
-    <Grid item xs={12} lg={10} sx={{ maxHeight: "calc(100vh - 84px - 84px)" }}>
+    <Grid
+      item
+      xs={12}
+      md={9}
+      lg={10}
+      sx={{ maxHeight: "calc(100vh - 84px - 84px)" }}
+    >
       {view === "list" ? <ArticlesList /> : <ArticlesGrid />}
     </Grid>
   );

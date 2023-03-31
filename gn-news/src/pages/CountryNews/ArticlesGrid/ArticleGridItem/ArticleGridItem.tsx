@@ -56,11 +56,7 @@ export default function ArticleGridItem(props: Props) {
               {item?.title}
             </Typography>
             <Typography gutterBottom variant="body2" component="div">
-              {
-                <span>
-                  {item?.description?.split(" ").slice(0, 3).join(" ")}
-                </span>
-              }
+              {item?.description?.split(" ").slice(0, 15).join(" ")}(...)
             </Typography>
           </CardContent>
         </CardActionArea>

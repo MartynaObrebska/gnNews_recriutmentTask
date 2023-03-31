@@ -1,15 +1,15 @@
-import {
-  CardMedia,
-  CardContent,
-  Typography,
-  Container,
-  Grid,
-} from "@mui/material";
+import { CardMedia, CardContent, Typography, Grid } from "@mui/material";
 import logo from "../../assets/gnNews_big.png";
 
 export default function Home() {
   return (
-    <Container maxWidth="md">
+    <Grid
+      item
+      xs={12}
+      md={9}
+      lg={10}
+      sx={{ maxHeight: "calc(100vh - 84px - 84px)" }}
+    >
       <Grid
         container
         justifyContent="center"
@@ -39,6 +39,6 @@ export default function Home() {
           </CardContent>
         </Grid>
       </Grid>
-    </Container>
+    </Grid>
   );
 }

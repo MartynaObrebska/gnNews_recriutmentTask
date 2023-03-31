@@ -7,10 +7,11 @@ function SideMenu() {
     <Grid
       item
       lg={2}
+      md={3}
       color="primary"
       sx={{
         borderRight: "1px solid #ddd",
-        display: { xs: "none", lg: "block" },
+        display: { xs: "none", md: "block" },
       }}
     >
       <MenuList

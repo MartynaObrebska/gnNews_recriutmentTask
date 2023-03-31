@@ -42,7 +42,7 @@ export default function LongMenu(props: Props) {
         aria-expanded={open ? "true" : undefined}
         aria-haspopup="true"
         onClick={handleClick}
-        sx={{ display: { xs: "inline-flex", lg: "none" } }}
+        sx={{ display: { xs: "inline-flex", md: "none" } }}
       >
         <MoreVertIcon />
       </IconButton>
